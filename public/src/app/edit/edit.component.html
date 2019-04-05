@@ -1,0 +1,82 @@
+<div>
+    <h4>Edit this pet</h4>
+  </div>
+<div class="border">
+    <div>
+        <ul *ngIf="errors">
+            <li class="errors" *ngFor="let error of errors">{{error}}</li>
+          </ul>
+    </div>
+
+  <div class="form-group">
+    <form (submit)="onSubmit()" #form="ngForm">
+          <!-- <p> {{ pet | json }} </p> -->
+        <div>
+          <label for="name">Name</label>
+          <input type="text"
+            class="form-control"
+            name="pet.name"
+            required
+            minlength="1"
+            [(ngModel)]="updatedPet.name"
+            #name="ngModel"
+          />
+        </div>
+
+        <div>
+            <label for="type">Type</label>
+            <input type="text"
+              name="pet.type"
+              class="form-control"
+              required
+              minlength="1"
+              [(ngModel)]="updatedPet.type"
+              #type="ngModel"
+            />
+        </div>
+
+        <div>
+          <label for="description">Description</label>
+          <input type="text"
+            name="updatedPet.description"
+            class="form-control"
+            required
+            minlength="1"
+            [(ngModel)]="updatedPet.description"
+            #description="ngModel"
+          />
+        </div>
+
+        <p>Skills (Optional)</p>
+        <div class="offset">
+          <div>
+              <label for="skill1">Skill 1: &nbsp;</label>
+              <input type="text"
+                name="pet.skill1"
+                [(ngModel)]="updatedPet.skill1"
+                #type="ngModel"
+              />
+            </div>
+            <div>
+                <label for="skill2">Skill 2: &nbsp;</label>
+                <input type="text"
+                  name="pet.skill2"
+                  [(ngModel)]="updatedPet.skill2"
+                  #type="ngModel"
+                />
+              </div>
+              <div>
+                  <label for="skill3">Skill 3: &nbsp;</label>
+                  <input type="text"
+                    name="pet.skill3"
+                    [(ngModel)]="updatedPet.skill3"
+                    #type="ngModel"
+                  />
+                </div>
+          </div>
+
+        <button class="btn btn-outline-secondary" [disabled]="form.invalid">Update</button>
+      </form>
+      <button class="btn btn-outline-secondary" [routerLink]="['/pets']">Cancel</button>
+  </div>
+</div>

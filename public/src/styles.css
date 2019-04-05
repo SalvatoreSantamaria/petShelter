@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/bootstrap-4.3.1-dist/css/bootstrap.min.css';
+
+/*bootstrap was downloaded and added to styles folder. link to guide: https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/#2-installing-bootstrap-from-npm*/
+
+.orangeButton {
+  color: white;
+  background-color: #FFCD24
+}
+
+.blueButton {
+  color: white;
+  background-color: #9DC8E4
+}
+
+/* * {
+  color: white;
+} */
+
+.grad {
+  background-image: linear-gradient(to bottom right,  #2aabe4, #4ea6cb);
+}
+
+/* #button {
+  color: white;
+  background-color: #2AABE4;
+} */
+
+body {
+  color: white;
+}
+
+.table-hover {
+  width: 100%;
+}
+
+.grayDiv {
+  background-color: #33393D;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 2px 2px #374a57;
+}
+/* .btn-warning {
+  background-color: #FFCD24;
+  color: white;
+}
+
+.btn-outline-warning {
+  color: #FFCD24;
+} */
+
+.right {
+  text-align: right;
+}
+
+.header {
+  width: 5px;
+  height: 1px;
+  position: relative;
+  /* height: 100px; */
+  background-color: #2aabe4;
+  animation-name: changer;
+  animation-duration: 4s;
+  /* animation-iteration-count: 1; */
+  /* animation-direction: alternate-reverse; */
+  /* background-image: linear-gradient(to right, red , yellow); */
+}
+
+@keyframes changer {
+  /* from {background-image: linear-gradient(to right, white, #4ea6cb);}
+  to {background-color: #2aabe4;} */
+  0%   {background-color:white; left:0%; top:0px;}
+  /* 25%  {background-color:white; left:100px; top:0px;}
+  50%  {background-color:white; left:200px; top:0px;}
+  75%  {background-color:white; left:300px; top:0px;} */
+  100% {background-color: #2aabe4; left: 100%; top:0px;}
+
+
+}
+
+.footer {
+  width: 100%;
+  /* background-image:  */
+  height: 100px;
+}

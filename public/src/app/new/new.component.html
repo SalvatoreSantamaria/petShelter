@@ -1,0 +1,115 @@
+<div>
+    <h4>Know of a pet needing a home?</h4>
+</div>
+<div class="border">
+  <div>
+      <ul *ngIf="errors">
+          <li class="errors" *ngFor="let error of errors">{{error}}</li>
+        </ul>
+  </div>
+
+  <div>
+    <form (submit)="onSubmit()" #newForm="ngForm">
+      <!-- use the json pipe to see changes in real time -->
+      <!-- <p>{{ newPet | json }}</p> -->
+    <div>
+      <label for="name">Name</label>
+      <input type="text"
+      class="form-control"
+      name="name"
+      required
+      minlength="0"
+      [(ngModel)]="newPet.name"
+      #name='ngModel'
+      />
+    </div>
+
+
+    <div *ngIf='(name.touched || name.dirty) && name.errors'>
+      <div *ngIf='name.errors.required'>
+        You must enter a name
+      </div>
+      <div *ngIf='name.errors.minlength'>
+          Name must be at least {{name.errors.minlength.requiredLength }} characters. Only {{name.errors.minlength.actualLength}} were entered.
+      </div>
+    </div>
+
+    <!-- removed from Type below, so that db errors will come through. -->
+    <!-- required
+    minlength="0" -->
+    <div>
+      <label for="type">Type</label>
+      <input type="text"
+      class="form-control"
+      name="petType"
+
+      [(ngModel)]="newPet.type"
+      #petType='ngModel'
+      />
+    </div>
+
+
+
+
+    <div *ngIf='(petType.touched || petType.dirty) && petType.errors'>
+        <div *ngIf='petType.errors.required'>
+          Please enter a description
+        </div>
+        <div *ngIf='petType.errors.minlength'>
+            Type must be at least {{petType.errors.minlength.requiredLength }} characters. Only {{petType.errors.minlength.actualLength}} were entered.
+        </div>
+      </div>
+
+    <div>
+      <label for="description">Description</label>
+      <input type="text"
+      class="form-control"
+      name="description"
+      required
+      minlength="0"
+      [(ngModel)]="newPet.description"
+      #description='ngModel'
+      />
+    </div>
+
+    <div *ngIf='(description.touched || description.dirty) && description.errors'>
+        <div *ngIf='description.errors.required'>
+          Please enter a description
+        </div>
+        <div *ngIf='description.errors.minlength'>
+            Description must be at least {{description.errors.minlength.requiredLength }} characters. Only {{description.errors.minlength.actualLength}} were entered.
+        </div>
+      </div>
+
+    <p>Skills (Optional)</p>
+    <div class="offset">
+        <div>
+            <label for="skill1">Skill 1: &nbsp;</label>
+            <input type="text"
+              name="newPet.skill1"
+              [(ngModel)]="newPet.skill1"
+              #type="ngModel"
+            />
+          </div>
+          <div>
+              <label for="skill2">Skill 2: &nbsp;</label>
+              <input type="text"
+                name="newPet.skill2"
+                [(ngModel)]="newPet.skill2"
+                #type="ngModel"
+              />
+            </div>
+            <div>
+                <label for="skill3">Skill 3: &nbsp;</label>
+                <input type="text"
+                  name="newPet.skill3"
+                  [(ngModel)]="newPet.skill3"
+                  #type="ngModel"
+                />
+            </div>
+    </div>
+      <button class="btn btn-outline-secondary"[disabled]="newForm.invalid">Add Pet</button>
+    </form>
+    <button class="btn btn-outline-secondary"[routerLink]="['/pets']">Cancel</button>
+  </div>
+</div>
