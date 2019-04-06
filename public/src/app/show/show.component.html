@@ -1,28 +1,24 @@
-<p>
-    <button class="btn btn-outline-warning"[routerLink]="['/pets']">Home</button>
-</p>
 <div>
   <h4>Details about {{ pet?.data?.name }}</h4>
 </div>
-
+<div class= 'border-fade'>
 <div class="row container">
+
     <div class="col-md-3 table">
-      <p class="bg-light text-dark">Pet Type</p>
+      <p>Pet Type</p>
       <p>Description</p>
-      <p class="bg-light text-dark">Skills</p>
-      <!-- <p>Likes</p>
-      <p><button [disabled]>Like this pet</button></p> -->
+      <p>Skills</p>
       <p><button class="btn btn-warning"(click)='delete(pet?.data?._id)'>Adopt this pet!</button></p>
     </div>
     <div class="col-md-9 table">
-        <p class="bg-light text-dark">{{ pet?.data?.type }}</p>
+        <p>{{ pet?.data?.type }}</p>
         <p>{{ pet?.data?.description }}</p>
-        <p class="bg-light text-dark">&nbsp;{{ pet?.data?.skill1 }} &nbsp;{{ pet?.data?.skill2 }}&nbsp;
+        <p>&nbsp;{{ pet?.data?.skill1 }} &nbsp;{{ pet?.data?.skill2 }}&nbsp;
           {{ pet?.data?.skill3 }}
         </p>
-        <!-- <p>Likes feature coming soon!</p> -->
-
+        <p> <button class="btn btn-outline-warning"[routerLink]="['/pets']">Home</button></p>
     </div>
+  </div>
   </div>
 
 
