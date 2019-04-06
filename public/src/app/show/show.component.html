@@ -1,5 +1,5 @@
 <p>
-    <button class="btn btn-outline-secondary"[routerLink]="['/pets']">Home</button>
+    <button class="btn btn-outline-warning"[routerLink]="['/pets']">Home</button>
 </p>
 <div>
   <h4>Details about {{ pet?.data?.name }}</h4>
@@ -12,7 +12,7 @@
       <p class="bg-light text-dark">Skills</p>
       <!-- <p>Likes</p>
       <p><button [disabled]>Like this pet</button></p> -->
-      <p><button class="btn btn-outline-secondary"(click)='delete(pet?.data?._id)'>Adopt this pet!</button></p>
+      <p><button class="btn btn-warning"(click)='delete(pet?.data?._id)'>Adopt this pet!</button></p>
     </div>
     <div class="col-md-9 table">
         <p class="bg-light text-dark">{{ pet?.data?.type }}</p>
