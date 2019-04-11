@@ -4,8 +4,10 @@
 /*bootstrap was downloaded and added to styles folder. link to guide: https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/#2-installing-bootstrap-from-npm*/
 
 
-
-
+.containerShade {
+    /* box-shadow: 5px 10px 18px #888888; */
+    box-shadow: 0px 0px 18px 0px #33393D;
+}
 
 .grad {
   background-image: linear-gradient(to bottom right,  #2aabe4, #4ea6cb);
@@ -31,6 +33,7 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 5px;
+
   /* padding: 5px 0px 0px 0px; */
   /* margin: 5px; */
 
@@ -96,7 +99,6 @@ h6 {
   width: 100%;
   background-size:  auto;
   padding-bottom: 20px;
-
 }
 
 img {
